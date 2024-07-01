@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+li {
+  padding: 15px;
+  margin: 8px 0;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+ul {
+  list-style-type: square;
+}
+li {
+  padding: 0%;
+  margin: 5px;
+}
+
+.todo-title {
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 20px;
+}
+h1 {
   text-align: center;
+  font-size: 2rem;
+  margin-top: 100px 100px 50px 45px;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  padding: 10px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.button {
+  width: auto;
+  padding: 5px 15px;
+  background-color: rgb(76, 207, 76);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  align-self: flex-start;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
+.button:hover {
+  background-color: rgb(173, 230, 195);
 }
 
-.read-the-docs {
-  color: #888;
+input {
+  padding: 0px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-left: 8px;
+  width: 100%;
 }
