@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-function AddTodoForm(props) {
+function AddTodoForm({ onAddToDo }) {
+  const [todoTitle, setTodoTitle] = useState("");
+
+  const handleTitleChange = (event) => {
+    const newTodoTitle = event.target.value;
+    setTodoTitle(newTodoTitle);
+  };
+
   const handleAddTodo = (event) => {
     console.log(event);
     event.preventDefault();
 
-    // retrieve the value of the title element from the event target and store it in a variable named todoTitle
-    const todoTitle = event.target[0].value;
-    console.log("Todo Title:", todoTitle);
-
-    // Pass setNewTodo as a callback handler prop named onAddTodo to the AddTodoForm component
-    props.onAddToDo(todoTitle);
-
-    //reset the form so the text input value is cleared
-    event.reset();
+    //  Inside handleAddTodo, update the onAddTodo callback prop
+    //  to pass an Object instead of a String; Object:
+    const newTodo = {
+      title: todoTitle,
+      id: Date.now(),
+    };
+    onAddToDo(newTodo);
+    setTodoTitle("");
   };
   return (
     <>
@@ -22,7 +28,13 @@ function AddTodoForm(props) {
           <label htmlFor="todoTitle" className="title">
             Title
           </label>
-          <input type="text" id="todoTitle" name="title" />
+          <input
+            type="text"
+            id="todoTitle"
+            name="title"
+            value={todoTitle}
+            onChange={handleTitleChange}
+          />
         </div>
         <button type="submit" className="button">
           Add

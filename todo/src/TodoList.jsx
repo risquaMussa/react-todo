@@ -1,12 +1,12 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
 
-function TodoList() {
-  const todoList = [
-    { id: 1, title: "Complete assignemnt" },
-    { id: 2, title: "Buy groceries" },
-    { id: 3, title: "Call friend" },
-  ];
+function TodoList({ todoList }) {
+  // const todoList = [
+  //   { id: 1, title: "Complete assignemnt" },
+  //   { id: 2, title: "Buy groceries" },
+  //   { id: 3, title: "Call friend" },
+  // ];
   return (
     <div>
       <ul>
