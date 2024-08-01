@@ -1,4 +1,12 @@
+import { useEffect, useRef } from "react";
+
 function InputWithLabel(props) {
+  //use ref can be used to store dom elements
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
   return (
     <>
       <div className="form-group">
@@ -11,6 +19,7 @@ function InputWithLabel(props) {
           name="title"
           value={props.todoTitle}
           onChange={props.handleTitleChange}
+          ref={inputRef}
         />
       </div>
     </>
