@@ -3,7 +3,7 @@ function InputWithLabel(props) {
     <>
       <div className="form-group">
         <label htmlFor="todoTitle" className="title">
-          {props.label}
+          {props.children}
         </label>
         <input
           type="text"
