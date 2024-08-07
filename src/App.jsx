@@ -43,8 +43,6 @@ function App() {
       <h1>Todo List</h1>
       <AddTodoForm onAddToDo={addTodo} />
 
-      {/* Using a ternary operator inside JSX,
-       if isLoading is true render the loading message, otherwise render the TodoList component */}
       {isLoading ? (
         <p>Loading ...</p> //we use ternary operator to make not visible after loading the page
       ) : (
