@@ -8,14 +8,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   // JSON.parse(localStorage.getItem("savedTodoList"));
   useEffect(() => {
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
       setTimeout(() => {
-        const object = {
-          data: {
-            todoList: JSON.parse(localStorage.getItem("savedTodoList")),
-          },
-        };
-        resolve(object);
+        const savedList =
+          JSON.parse(localStorage.getItem("savedTodoList")) || [];
+        resolve({ data: { todoList: savedList } });
       }, 2000);
     }).then((result) => {
       setTodoList(result.data.todoList);
