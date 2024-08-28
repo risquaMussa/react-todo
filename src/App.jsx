@@ -4,8 +4,52 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState([]) ?? [];
   const [isLoading, setIsLoading] = useState(true);
+  //start from here
+  const fetchData = async () => {
+    //to check api key
+    // const apiKey = import.meta.env.VITE_AIRTABLE_API_TOKEN;
+    // console.log(apiKey);
+    // const baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
+    // console.log(baseId);
+
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_API_TOKEN}`,
+      },
+    };
+
+    const url = `https://api.airtable.com/v0/${
+      import.meta.env.VITE_AIRTABLE_BASE_ID
+    }/${import.meta.env.VITE_TABLE_NAME}`;
+
+    try {
+      const response = await fetch(url, options);
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      const todos = data.records.map((record) => ({
+        title: record.fields.title,
+        id: record.id,
+      }));
+
+      setTodoList(todos);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Fetch error:", error.message);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   // JSON.parse(localStorage.getItem("savedTodoList"));
   useEffect(() => {
     new Promise((resolve) => {
