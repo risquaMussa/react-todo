@@ -4,10 +4,16 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState([]) ?? [];
   const [isLoading, setIsLoading] = useState(true);
   //start from here
   const fetchData = async () => {
+    //to check api key
+    // const apiKey = import.meta.env.VITE_AIRTABLE_API_TOKEN;
+    // console.log(apiKey);
+    // const baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
+    // console.log(baseId);
+
     const options = {
       method: "GET",
       headers: {
@@ -27,6 +33,7 @@ function App() {
       }
 
       const data = await response.json();
+      console.log(data);
 
       const todos = data.records.map((record) => ({
         title: record.fields.title,
@@ -39,10 +46,10 @@ function App() {
       console.error("Fetch error:", error.message);
     }
   };
-
   useEffect(() => {
     fetchData();
   }, []);
+
   // JSON.parse(localStorage.getItem("savedTodoList"));
   useEffect(() => {
     new Promise((resolve) => {
