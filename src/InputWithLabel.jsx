@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import style from "./TodoListItem.module.css";
+import PropTypes from "prop-types";
 
 function InputWithLabel(props) {
   //use ref can be used to store dom elements
@@ -11,7 +12,7 @@ function InputWithLabel(props) {
   return (
     <>
       <div className={style.FormGroup}>
-      <label htmlFor="todoTitle" className={style.title}>
+        <label htmlFor="todoTitle" className={style.title}>
           {props.children}
         </label>
         <input
@@ -26,5 +27,11 @@ function InputWithLabel(props) {
     </>
   );
 }
+
+InputWithLabel.prototype = {
+  children: PropTypes.node.isRequired,
+  todoTitle: PropTypes.string.isRequired,
+  handleTitleChange: PropTypes.func.isRequired,
+};
 
 export default InputWithLabel;
