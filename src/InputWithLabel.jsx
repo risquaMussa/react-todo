@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import style from "./TodoListItem.module.css";
 
 function InputWithLabel(props) {
   //use ref can be used to store dom elements
@@ -10,8 +9,8 @@ function InputWithLabel(props) {
   });
   return (
     <>
-      <div className={style.FormGroup}>
-      <label htmlFor="todoTitle" className={style.title}>
+      <div className="form-group">
+        <label htmlFor="todoTitle" className="title">
           {props.children}
         </label>
         <input

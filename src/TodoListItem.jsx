@@ -1,17 +1,25 @@
 import React from "react";
-import style from "./TodoListItem.module.css";
-import { FaTrashAlt } from "react-icons/fa";
-
 const TodoListItem = ({ todo, onRemoveTodo }) => {
   function clickHandler() {
     onRemoveTodo(todo.id);
   }
+
+  const buttonStyle = {
+    backgroundColor: "red",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    padding: "5px 10px",
+    cursor: "pointer",
+    marginLeft: "10px",
+  };
+
   return (
     <>
-      <li className={style.ListItem}>
+      <li className="todo-title">
         {todo.title}
-        <button className={style.ButtonStyle} onClick={clickHandler}>
-          <FaTrashAlt />
+        <button style={buttonStyle} onClick={clickHandler}>
+          Remove
         </button>
       </li>
     </>
