@@ -1,12 +1,15 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: skyblue;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  min-height: 100vh;
 }
+
 li {
   padding: 15px;
   margin: 8px 0;
@@ -15,7 +18,7 @@ li {
 
 h1 {
   font-size: 1.75rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 ul {
   list-style-type: square;
@@ -42,20 +45,10 @@ h1 {
   margin: 20px auto;
 }
 
-.form-group {
-  margin-bottom: 15px;
-  display: flex;
-  padding: 10px;
-}
-.title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
 .button {
   width: auto;
   padding: 5px 15px;
-  background-color: rgb(76, 207, 76);
+  background-color: rgb(50, 131, 156);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -66,7 +59,7 @@ h1 {
   align-self: flex-start;
 }
 .button:hover {
-  background-color: rgb(173, 230, 195);
+  background-color: rgb(143, 153, 202);
 }
 
 input {
