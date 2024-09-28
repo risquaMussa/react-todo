@@ -4,11 +4,11 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .ListItem {
-  font-family: monospace;
+  font-family: cursive;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f9f9f990;
+  background-color: lightskyblue;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
@@ -18,16 +18,16 @@ body {
 
 .ButtonStyle {
   font-family: "Lobster", cursive;
-  background-color: rgb(50, 131, 156);
+  background-color: rgb(244, 101, 130);
   padding: 10px 20px;
   border: none;
   border: 5px;
-  color: white;
+  color: rgb(43, 40, 40);
   font-size: 16px;
   cursor: pointer;
 }
 .ButtonStyle:hover {
-  background-color: rgb(20, 99, 132);
+  background-color: lightcoral;
 }
 .FormGroup {
   margin-bottom: 15px;
@@ -49,5 +49,3 @@ body {
     padding: 8px 16px;
   }
 }
-
-

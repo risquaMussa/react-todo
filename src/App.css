@@ -1,15 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: skyblue;
+  font-family: "Sofia", sans-serif;
+  background-color: #3bbdec;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  box-sizing: border-box;
 }
-
 li {
   padding: 15px;
   margin: 8px 0;
@@ -18,7 +18,7 @@ li {
 
 h1 {
   font-size: 1.75rem;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 ul {
   list-style-type: square;
@@ -35,6 +35,7 @@ li {
   padding: 0 20px;
 }
 h1 {
+  font-family: cursive;
   text-align: center;
   font-size: 2rem;
   margin-top: 100px 100px 50px 45px;
@@ -45,10 +46,20 @@ h1 {
   margin: 20px auto;
 }
 
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  padding: 10px;
+}
+.title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
 .button {
   width: auto;
   padding: 5px 15px;
-  background-color: rgb(50, 131, 156);
+  background-color: blue;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -59,13 +70,13 @@ h1 {
   align-self: flex-start;
 }
 .button:hover {
-  background-color: rgb(143, 153, 202);
+  background-color: rgb(24, 50, 110);
 }
 
 input {
   padding: 0px;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-left: 8px;
   width: 100%;
 }
