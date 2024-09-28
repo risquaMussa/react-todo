@@ -9,9 +9,6 @@ function AddTodoForm({ onAddToDo }) {
     const newTodoTitle = event.target.value;
     setTodoTitle(newTodoTitle);
   };
-  AddTodoForm.propTypes = {
-    onAddTodo: PropTypes.func.isRequired,
-  };
 
   const handleAddTodo = (event) => {
     console.log(event);
@@ -42,7 +39,8 @@ function AddTodoForm({ onAddToDo }) {
     </>
   );
 }
+AddTodoForm.propTypes = {
+  onAddToDo: PropTypes.func.isRequired,
+};
 
 export default AddTodoForm;
-
-//https://github.com/risquaMussa/react-todo/pull/15

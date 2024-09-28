@@ -8,15 +8,15 @@ const TodoListItem = ({ todo, onRemoveTodo }) => {
     onRemoveTodo(todo.id);
   }
 
-  const ButtonStyle = {
-    backgroundColor: "red",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    padding: "5px 10px",
-    cursor: "pointer",
-    marginLeft: "10px",
-  };
+  // const ButtonStyle = {
+  //   backgroundColor: "red",
+  //   color: "white",
+  //   border: "none",
+  //   borderRadius: "5px",
+  //   padding: "5px 10px",
+  //   cursor: "pointer",
+  //   marginLeft: "10px",
+  // };
 
   return (
     <>
@@ -29,7 +29,7 @@ const TodoListItem = ({ todo, onRemoveTodo }) => {
     </>
   );
 };
-TodoListItem.prototype = {
+TodoListItem.propTypes = {
   todo: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     title: PropTypes.string.isRequired,

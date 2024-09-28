@@ -19,7 +19,7 @@ function TodoList({ todoList, onRemoveTodo }) {
     </div>
   );
 }
-TodoList.prototype = {
+TodoList.propTypes = {
   todoList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

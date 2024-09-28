@@ -8,7 +8,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #6fb7de90;
+  background-color: lightskyblue;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
@@ -16,18 +16,18 @@ body {
   color: rgb(85, 42, 165);
 }
 
-.buttonStyle {
+.ButtonStyle {
   font-family: "Lobster", cursive;
-  background-color: rgb(137, 184, 198);
+  background-color: rgb(244, 101, 130);
   padding: 10px 20px;
   border: none;
   border: 5px;
-  color: rgb(113, 136, 192);
+  color: rgb(43, 40, 40);
   font-size: 16px;
   cursor: pointer;
 }
 .ButtonStyle:hover {
-  background-color: rgb(77, 115, 131);
+  background-color: lightcoral;
 }
 .FormGroup {
   margin-bottom: 15px;

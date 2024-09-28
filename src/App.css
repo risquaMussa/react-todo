@@ -2,7 +2,7 @@
 
 body {
   font-family: "Sofia", sans-serif;
-  background-color: #9cc4c6;
+  background-color: #3bbdec;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -35,6 +35,7 @@ li {
   padding: 0 20px;
 }
 h1 {
+  font-family: cursive;
   text-align: center;
   font-size: 2rem;
   margin-top: 100px 100px 50px 45px;
@@ -58,7 +59,7 @@ h1 {
 .button {
   width: auto;
   padding: 5px 15px;
-  background-color: rgb(92, 156, 179);
+  background-color: blue;
   color: #fff;
   border: none;
   border-radius: 5px;

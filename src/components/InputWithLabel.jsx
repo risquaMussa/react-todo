@@ -26,8 +26,8 @@ function InputWithLabel(props) {
   );
 }
 
-InputWithLabel.prototype = {
-  children: PropTypes.node.isRequired,
+InputWithLabel.propTypes = {
+  //children: PropTypes.node.isRequired,
   todoTitle: PropTypes.string.isRequired,
   handleTitleChange: PropTypes.func.isRequired,
 };
