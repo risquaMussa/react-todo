@@ -40,8 +40,8 @@ function App() {
       }));
       console.log("unsorted ", data);
 
-      //___________________________before toggle button___________________________///////////
-      //sort the todos ascending alphabetical order
+      // ___________________________before toggle button___________________________///////////
+      // sort the todos ascending alphabetical order
       // const ascendingSorted = todos.sort((objectA, objectB) => {
       //   const titleA = objectA.title.toLowerCase();
       //   const titleB = objectB.title.toLowerCase();
@@ -63,7 +63,7 @@ function App() {
       // });
       // console.log("desscending alphabetical order by title ", descendingSorted);
 
-      //setTodoList(ascendingSorted);
+      setTodoList(todos);
       setIsLoading(false);
     } catch (error) {
       console.error("Fetch error:", error.message);
