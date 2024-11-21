@@ -2,34 +2,38 @@ import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 import "./App.css";
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   //start from here
   const fetchData = async () => {
-    const option = {
+    const options = {
       method: "GET",
       headers: {
         Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_API_TOKEN}`,
       },
     };
-    const URL = `https://api.airtable.com/v0/${
+
+    const url = `https://api.airtable.com/v0/${
       import.meta.env.VITE_AIRTABLE_BASE_ID
     }/${import.meta.env.VITE_TABLE_NAME}`;
 
     try {
-      const response = await fetch(URL, option);
+      const response = await fetch(url, options);
 
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
+
       const data = await response.json();
 
       const todos = data.records.map((record) => ({
         title: record.fields.title,
         id: record.id,
       }));
+
       setTodoList(todos);
       setIsLoading(false);
     } catch (error) {
@@ -70,16 +74,27 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Todo List</h1>
-      <AddTodoForm onAddToDo={addTodo} />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <h1>Todo List</h1>
+              <AddTodoForm onAddToDo={addTodo} />
 
-      {isLoading ? (
-        <p>Loading ...</p> //we use ternary operator to make not visible after loading the page
-      ) : (
-        <TodoList onRemoveTodo={removeTodo} todoList={todoList} />
-      )}
-    </div>
+              {isLoading ? (
+                <p>Loading ...</p> //we use ternary operator to make not visible after loading the page
+              ) : (
+                <TodoList onRemoveTodo={removeTodo} todoList={todoList} />
+              )}
+            </div>
+          }
+        ></Route>
+
+        <Route path="/new" element={<h1>New Todo List</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
